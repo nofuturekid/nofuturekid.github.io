@@ -20,10 +20,28 @@
           );
         }
       })();
+      // Nova moved to the hellwand organization (2026-11-12). The project site keeps
+      // its structure, so old paths map one to one.
+      (function () {
+        var p = location.pathname;
+        if (p === "/nova" || p.indexOf("/nova/") === 0) {
+          var rest = p.replace(/^\/nova\/?/, "");
+          location.replace(
+            "https://hellwand.github.io/nova/" +
+              rest +
+              location.search +
+              location.hash,
+          );
+        }
+      })();
     </script>
   </head>
   <body>
     <p>Page not found.</p>
+    <p>
+      Nova now lives at
+      <a href="https://hellwand.github.io/nova/">hellwand.github.io/nova</a>.
+    </p>
     <p>
       TasmoFleet now lives at
       <a href="https://hellwand.github.io/tasmofleet/"
